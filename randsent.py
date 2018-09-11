@@ -3,8 +3,16 @@ import argparse
 
 
 def gen_sen(pos,sdict):
-    ran=int(random.random()*len(sdict[pos]))
-    sen=sdict[pos][ran]
+    sum=0.0
+    for poss in sdict[pos]:
+        sum+=poss[1]
+    ran=random.random()*sum
+    lab=0.0
+    for poss in sdict[pos]:
+        if ran>=lab and ran<lab+poss[1]:
+            sen=poss[0]
+            break
+        lab+=poss[1]
     words=sen.split()
     for i in range(len(words)):
         if words[i] in sdict:
@@ -28,7 +36,7 @@ for line in fg.readlines():
     if l not in dic:
         dic[l]=[]
     r=r.split('#')[0].strip()
-    dic[l].append(r)
+    dic[l].append((r,float(n)))
 
 fg.close()
 
