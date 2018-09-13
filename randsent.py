@@ -1,8 +1,14 @@
 import random
 import argparse
 
+ 
+M=500
 
 def gen_sen(pos,sdict):
+    global M
+    if M==0:
+        return "..."
+    M-=1
     sum=0.0
     for poss in sdict[pos]:
         sum+=poss[1]
@@ -41,5 +47,6 @@ for line in fg.readlines():
 fg.close()
 
 for num in range(num_sen):
+    M=500
     sen=gen_sen('ROOT',dic)
     print(sen)

@@ -1,0 +1,49 @@
+
+
+# Rules for creating full sentences.
+
+12	ROOT	S .       #Declarative sentences are most common.
+3	ROOT	S !       #Exclamatory sentences are less frequent than declarative sentences.
+1	ROOT	is it true that S ?     # Questions are less frequent than declarative sentences. And questions expressed in this way is even less.
+
+
+1	S	NP VP
+1	VP	Verb NP
+1	NP	Det Noun
+0.2	NP	NP PP    #eliminate super long sentences, which are not natural.
+1	PP	Prep NP
+20	Noun	Adj Noun  #Multiple adjectives are common in sentences.
+
+
+#By searching those verbs on Google, I got 327,000,000 results for "ate",1,350,000,000 results for "wanted", 77,400,000 results for "kissed", 238,000,000 for "understood", 127,000,000 for "pickled". So I weigh them according to number of results on Google.
+10	Verb	ate
+20	Verb	wanted
+1	Verb	kissed
+7	Verb	understood
+3	Verb	pickled
+
+#By searching those determiners on Google, I got 25,270,000,000 results for "the", 25,270,000,000 results for "a", 3,860,000,000 results for "every".
+5	Det	the
+5	Det	a
+1	Det	every
+
+#By searching those nouns on Google, I got 1,440,000,000 results for "president", 530,000,000 results for "sandwich", 83,900,000 results for "pickle",690,000,000 results for "chief of staff",3,810,000,000 results for "floor".
+10	Noun	president
+5	Noun	sandwich
+1	Noun	pickle
+6	Noun	chief of staff
+15	Noun	floor
+
+#By searching those nouns on Google, I got 2,200,000,000 results for "fine", 754,000,000 results for "delicious", 15,600,000 results for "perplexed", 125,000,000 results for "pickled".
+20	Adj	fine
+10	Adj	delicious
+1	Adj	perplexed
+5	Adj	pickled
+
+#By searching those nouns on Google, I got 25,270,000,000 results for "with", 25,270,000,000 results for "on", 4,770,000,000 results for "under", 25,270,000,000 results for "in".
+5	Prep	with
+5	Prep	on
+1	Prep	under
+5	Prep	in
+
+#sentences generated are put in the file report.doc 2(e)
