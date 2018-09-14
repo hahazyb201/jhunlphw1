@@ -1,0 +1,48 @@
+Modifications:
+
+TODO:
+Finish analysis of sentences (f)(g)(h) (6,7,8 indexed below)
+Syntax:
+1 S(NP(Propernoun)+VP(Verb(Verb_transitive)+(NP(Det+Noun))))
+2 S(NP(NP(proper noun)+coordinate conjunction+NP(Det+Noun))+VP(VP(Verb(Verb_transitive))+coordinate conjunction+VP(Verb(Verb_tansitive)+NP(Det+Noun))))
+3 S(NP(Det+Noun)+VP(Verb(Verb_intransitive)))
+4 S(NP(Det+Noun)+VP(Verb(Verb_with_complement))+that+S(NP(Det+Noun)+VP(Verb_intransitive)))
+5 S(NP(Pronoun)+VP(Verb_with_explanation+NP+that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(Propernoun)))))
+6 
+7
+8
+
+TODO:
+extract the grammer from syntax
+
+12	ROOT	S .       
+3	ROOT	S !
+1	ROOT	is it true that S ?     
+
+
+
+
+TODO:
+list all nonterminals needed.
+
+Sally
+ate
+a
+sandwich
+and
+the
+president
+wanted
+sighed
+thought
+that
+it
+perplexed
+very
+worked
+on
+every
+proposal
+desk
+pickle
+...
