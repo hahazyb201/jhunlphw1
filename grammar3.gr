@@ -20,7 +20,7 @@
 1	ROOT	is it true that S ?     
 
 
-10	S	NP VP
+3	S	NP VP
 1	S	S and S
 
 10	NP	Det Noun
@@ -29,7 +29,7 @@
 5	NP	ProNoun 
 1	NP	NP and NP
 3	NP	NP PP
-
+1	Noun	AP Noun
 10	VP	Verb_transitive NP
 8	VP	Verb_intransitive
 5	VP	Verb_complement that S
@@ -38,21 +38,17 @@
 
 1	PP	Prep NP
 
-1	Noun	AP Noun
+5	Noun	AP Noun
 1	AP	Adverb AP
 1	AP	Adj
 
-
 1	Name	Sally
-
 1	ProNoun	it
 1	Noun	sandwich
 1	Noun	president
-1	Noun	it
 1	Noun	proposal
 1	Noun	desk
 1	Noun	pickle
-
 
 1	Verb_transitive	ate
 1	Verb_transitive	wanted
