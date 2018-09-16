@@ -29,7 +29,7 @@
 5	NP	ProNoun 
 1	NP	NP and NP
 3	NP	NP PP
-1	Noun	AP Noun
+
 10	VP	Verb_transitive NP
 8	VP	Verb_intransitive
 5	VP	Verb_complement that S
