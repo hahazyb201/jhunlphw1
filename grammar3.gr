@@ -3,11 +3,11 @@
 #TODO:
 #Finish analysis of sentences (f)(g)(h) (6,7,8 indexed below)
 #Syntax:
-#1 S(NP(noun)+VP(Verb(Verb_transitive)+(NP(Det+Noun))))
+#1 S(NP(name)+VP(Verb(Verb_transitive)+(NP(Det+Noun))))
 #2 S(NP(NP(noun)+coordinate conjunction+NP(Det+Noun))+VP(VP(Verb(Verb_transitive))+coordinate conjunction+VP(Verb(Verb_tansitive)+NP(Det+Noun))))
 #3 S(NP(Det+Noun)+VP(Verb(Verb_intransitive)))
 #4 S(NP(Det+Noun)+VP(Verb(Verb_with_complement))+that+S(NP(Det+Noun)+VP(Verb_intransitive)))
-#5 S(NP(noun)+VP(Verb_with_explanation+NP+that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(Propernoun)))))
+#5 S(NP(pronoun)+VP(Verb_with_explanation+NP+that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(Propernoun)))))
 #6 S(NP(that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(noun))))+VP(Verb_transitive + NP(Det(det)+Noun(noun)))) 
 #7 S(NP(Det+Noun(AP(Adv+AP(Adv+AP(Adv+adj))))+Noun(noun)))+VP(Verb_transitive+NP(Det+Noun(noun))))
 #8 S(NP(Det+Noun)+VP(Verb_transitive+NP(NP(Adj(adj)+Noun(noun))+PP(Prep(prep)+NP(Det(det)+Noun(noun))))))
@@ -23,8 +23,10 @@
 10	S	NP VP
 1	S	S and S
 
-5	NP	Det Noun
+10	NP	Det Noun
 10	NP	Noun
+5	NP	Name
+5	NP	ProNoun 
 1	NP	NP and NP
 3	NP	NP PP
 
@@ -40,22 +42,31 @@
 1	AP	Adverb AP
 1	AP	Adj
 
-1	Noun	Sally
+
+1	Name	Sally
+
+1	ProNoun	it
 1	Noun	sandwich
 1	Noun	president
 1	Noun	it
 1	Noun	proposal
 1	Noun	desk
 1	Noun	pickle
+
+
 1	Verb_transitive	ate
 1	Verb_transitive	wanted
 1	Verb_transitive	worked on
 1	Verb_intransitive	sighed
 1	Verb_complement	thought
 1	Verb_explantion	perplexed
+
 1	Det	a
 1	Det	the
+1	Det	every
+
 1	Adverb	very
+
 1	Prep	on
+
 1	Adj	perplexed
-1	Adj	every
