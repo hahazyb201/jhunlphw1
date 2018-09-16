@@ -1,48 +1,61 @@
-Modifications:
+# Modifications:
 
-TODO:
-Finish analysis of sentences (f)(g)(h) (6,7,8 indexed below)
-Syntax:
-1 S(NP(Propernoun)+VP(Verb(Verb_transitive)+(NP(Det+Noun))))
-2 S(NP(NP(proper noun)+coordinate conjunction+NP(Det+Noun))+VP(VP(Verb(Verb_transitive))+coordinate conjunction+VP(Verb(Verb_tansitive)+NP(Det+Noun))))
-3 S(NP(Det+Noun)+VP(Verb(Verb_intransitive)))
-4 S(NP(Det+Noun)+VP(Verb(Verb_with_complement))+that+S(NP(Det+Noun)+VP(Verb_intransitive)))
-5 S(NP(Pronoun)+VP(Verb_with_explanation+NP+that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(Propernoun)))))
-6 
-7
-8
+#TODO:
+#Finish analysis of sentences (f)(g)(h) (6,7,8 indexed below)
+#Syntax:
+#1 S(NP(noun)+VP(Verb(Verb_transitive)+(NP(Det+Noun))))
+#2 S(NP(NP(noun)+coordinate conjunction+NP(Det+Noun))+VP(VP(Verb(Verb_transitive))+coordinate conjunction+VP(Verb(Verb_tansitive)+NP(Det+Noun))))
+#3 S(NP(Det+Noun)+VP(Verb(Verb_intransitive)))
+#4 S(NP(Det+Noun)+VP(Verb(Verb_with_complement))+that+S(NP(Det+Noun)+VP(Verb_intransitive)))
+#5 S(NP(noun)+VP(Verb_with_explanation+NP+that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(Propernoun)))))
+#6 S(NP(that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(noun))))+VP(Verb_transitive + NP(Det(det)+Noun(noun)))) 
+#7 S(NP(Det+Noun(AP(Adv+AP(Adv+AP(Adv+adj))))+Noun(noun)))+VP(Verb_transitive+NP(Det+Noun(noun))))
+#8 S(NP(Det+Noun)+VP(Verb_transitive+NP(NP(Adj(adj)+Noun(noun))+PP(Prep(prep)+NP(Det(det)+Noun(noun))))))
 
-TODO:
-extract the grammer from syntax
+#TODO:
+#extract the grammr from syntax
 
 12	ROOT	S .       
 3	ROOT	S !
 1	ROOT	is it true that S ?     
 
 
+10	S	NP VP
+1	S	S and S
 
+5	NP	Det Noun
+10	NP	Noun
+1	NP	NP and NP
+3	NP	NP PP
 
-TODO:
-list all nonterminals needed.
+10	VP	Verb_transitive NP
+8	VP	Verb_intransitive
+5	VP	Verb_complement that S
+3	VP	Verb_explantion NP that S
+1	VP	VP and VP
 
-Sally
-ate
-a
-sandwich
-and
-the
-president
-wanted
-sighed
-thought
-that
-it
-perplexed
-very
-worked
-on
-every
-proposal
-desk
-pickle
-...
+1	PP	Prep NP
+
+1	Noun	AP Noun
+1	AP	Adverb AP
+1	AP	Adj
+
+1	Noun	Sally
+1	Noun	sandwich
+1	Noun	president
+1	Noun	it
+1	Noun	proposal
+1	Noun	desk
+1	Noun	pickle
+1	Verb_transitive	ate
+1	Verb_transitive	wanted
+1	Verb_transitive	worked on
+1	Verb_intransitive	sighed
+1	Verb_complement	thought
+1	Verb_explantion	perplexed
+1	Det	a
+1	Det	the
+1	Adverb	very
+1	Prep	on
+1	Adj	perplexed
+1	Adj	every
