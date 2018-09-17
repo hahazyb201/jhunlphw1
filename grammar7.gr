@@ -1,0 +1,114 @@
+#I handled (a) and (c).
+#Modifications:
+#1 Add Det_vowel,Det_non_vowel,Det_other. Det_vowel is the determiner that must be used before a vowel word. Det_non_vowel is the determiner that must be used before non-vowel word.Det_other indicates other determiners.
+#2 Add Noun_vowel,Noun_non_vowel
+#3 Add Relative_clause ,VP_without_object
+################################################################################
+
+#All nonterminals
+
+
+12	ROOT	S .       
+3	ROOT	S !
+1	ROOT	is it true that S ?     
+
+1	S	NP VP
+
+
+1	VP	Verb_trans NP
+1	VP	Verb_intrans
+0.5	VP	Verb_trans Conj Verb_trans NP
+1	VP	Verb_with_complement that S
+1	VP	Verb_with_explanation NP that S
+1	VP	Verb_intrans PP
+
+4	NP	Det_other Noun
+1	NP	Det_vowel Noun_vowel
+1	NP	Det_non_vowel Noun_non_vowel
+0.2	NP	NP PP #eliminate super long sentences, which are not natural.
+0.6	NP	Propernoun
+0.4	NP	NP Conj NP
+1	NP	Pronoun
+0.2	NP	that NP VP
+1	NP	Det_other Adv Adj Noun
+1	NP	Det_non_vowel Adv Adj Noun
+
+1	PP	Prep NP
+
+0.3	Adv	Adv Adv
+
+4	Noun	Noun_vowel
+4	Noun	Noun_non_vowel
+0.4	Noun	Noun Relative_clause
+
+1	Relative_clause	that VP    #The relative is composed of the relative pronoun and the clause without a subject or object.
+1	Relative_clause	that NP VP_without_object
+
+2	VP_without_object	Verb_trans
+1	VP_without_object	Verb_with_complement that NP VP_without_object
+1	VP_without_object	Verb_trans and Verb_trans
+
+
+
+1	Noun_vowel	Adj_vowel Noun_vowel
+2	Noun_non_vowel	Adj_non_vowel Noun_non_vowel
+
+1	Adj	Adj_vowel
+1	Adj	Adj_non_vowel
+
+#All terminals
+
+1	Propernoun	Sally
+
+1	Verb_trans	ate
+1	Verb_trans	wanted
+1	Verb_trans	perplexed
+0.1	Verb_trans	kissed
+0.1	Verb_trans	pickled
+
+
+1	Verb_intrans	signed
+1	Verb_intrans	worked
+
+5	Det_other	the
+5	Det_non_vowel	a
+1	Det_other	every
+5	Det_vowel	an
+
+1	Noun_non_vowel	president
+1	Noun_non_vowel	sandwich
+1	Noun_non_vowel	pickle
+1	Noun_non_vowel	chief of staff
+1	Noun_non_vowel	floor
+1	Noun_non_vowel	desk
+1	Noun_non_vowel	proposal
+
+1	Noun_vowel	apple
+1	Noun_vowel	ear
+1	Noun_vowel	island
+
+
+1	Pronoun	it
+
+1	Conj	and
+
+1	Verb_with_complement	thought
+1	Verb_with_complement	understood
+
+1	Verb_with_explanation	perplexed
+
+
+1	Adv	very
+
+10	Adj_non_vowel	fine
+10	Adj_non_vowel	delicious
+1	Adj_non_vowel	perplexed
+5	Adj_non_vowel	pickled
+
+1	Adj_vowel	amazing
+1	Adj_vowel	elegent
+
+5	Prep	with
+5	Prep	on
+1	Prep	under
+5	Prep	in

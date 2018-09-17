@@ -1,10 +1,4 @@
-#!/bin/sh
-if [ $# -eq 2 ]; then
-    echo "ououou"
-    python3 ./randsent.py $1 $2
-elif [ $# -eq 3 ]; then
-    echo "hhhh"
-    python3 ./randsent.py $1 $2 $3
-else
-    echo "Arguments error!"
-fi
+#! /usr/bin/env bash
+source activate autograder-3
+python3 randsent.py $*
+
