@@ -34,14 +34,14 @@ def gen_tree(pos, sdict):
         return "..."
     M -= 1
     words = get_random_branch(pos, sdict).split()
-    tree = "(" + pos + " "
+    tree = ["(" + pos]
     for i in range(len(words)):
         if words[i] in sdict:
-            tree += gen_tree(words[i], sdict)
+            tree.append(gen_tree(words[i], sdict))
         else:
-            tree += words[i] + " "
-    tree = tree.strip() + ")"
-    return tree
+            tree.append(words[i])
+    tree[len(tree) - 1] += ")"
+    return " ".join(tree)
 
 
 parser = argparse.ArgumentParser()
