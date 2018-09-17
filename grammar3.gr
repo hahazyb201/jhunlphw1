@@ -1,3 +1,4 @@
+
 #Analysis:
 #Firstly, I analyse the syntax of sentences (a)-(h) and express each sentence in the form of POS(part of speech) in order to #discover all syntaxes needed to generate sentences (a)-(h).
 #Syntax:
@@ -21,6 +22,7 @@
 ################################################################################
 
 #All nonterminals
+
 
 12	ROOT	S .       
 3	ROOT	S !
@@ -83,6 +85,7 @@
 1	Verb_with_complement	understood
 
 1	Verb_with_explanation	perplexed
+
 
 1	Adv	very
 

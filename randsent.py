@@ -1,6 +1,7 @@
 import random
 import argparse
- 
+
+
 M = 400
 
 
@@ -16,6 +17,7 @@ def get_random_branch(pos, sdict):
         lab += poss[1]
 
 
+
 def gen_sen(pos, sdict):                         #generate the sentence
     global M
     if M == 0:
@@ -26,6 +28,7 @@ def gen_sen(pos, sdict):                         #generate the sentence
         if words[i] in sdict:
             words[i] = gen_sen(words[i], sdict)
     return ' '.join(words)
+
 
 
 def gen_tree(pos, sdict):                         #generate the tree as well as the sentence
