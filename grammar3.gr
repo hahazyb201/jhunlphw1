@@ -1,48 +1,97 @@
-Modifications:
+#Analysis:
+#Firstly, I analyse the syntax of sentences (a)-(h) and express each sentence in the form of POS(part of speech) in order to #discover all syntaxes needed to generate sentences (a)-(h).
+#Syntax:
+#1 S(NP(Propernoun)+VP(Verb(Verb_transitive)+NP(Det+Noun)))
+#2 S(NP(NP(proper noun)+coordinate conjunction+NP(Det+Noun))+VP(VP(Verb(Verb_transitive))+coordinate conjunction+VP(Verb(Verb_tansitive)+NP(Det+Noun))))
+#3 S(NP(Det+Noun)+VP(Verb(Verb_intransitive)))
+#4 S(NP(Det+Noun)+VP(Verb(Verb_with_complement))+that+S(NP(Det+Noun)+VP(Verb_intransitive)))
+#5 S(NP(Pronoun)+VP(Verb_with_explanation+NP+that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(Propernoun)))))
+#6 S(NP(that+NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(Propernoun)))+VP(Verb(Verb_transitive)+NP(Det+Noun)))
+#7 S(NP(Det+Adv(Adv+Adv)+Adj+Noun)+VP(Verb_transitive+NP(Det+Noun)))
+#8 S(NP(Det+Noun)+VP(Verb_intransitive+PP(Prep+NP(NP(Det+Noun)+PP(Prep+NP(Det+Noun))))))
 
-TODO:
-Finish analysis of sentences (f)(g)(h) (6,7,8 indexed below)
-Syntax:
-1 S(NP(Propernoun)+VP(Verb(Verb_transitive)+(NP(Det+Noun))))
-2 S(NP(NP(proper noun)+coordinate conjunction+NP(Det+Noun))+VP(VP(Verb(Verb_transitive))+coordinate conjunction+VP(Verb(Verb_tansitive)+NP(Det+Noun))))
-3 S(NP(Det+Noun)+VP(Verb(Verb_intransitive)))
-4 S(NP(Det+Noun)+VP(Verb(Verb_with_complement))+that+S(NP(Det+Noun)+VP(Verb_intransitive)))
-5 S(NP(Pronoun)+VP(Verb_with_explanation+NP+that+S(NP(Det+Noun)+VP(Verb(Verb_transitive)+NP(Propernoun)))))
-6 
-7
-8
+#Modifications:
+#1 Verb is divided into Verb_trans,Verb_intrans,Verb_with_complement,Verb_with_explanation
+#2 Use Conj to connect two Verb_trans
+#3 Add Propernoun(proper noun)
+#4 Add pronoun
+#5 Add Adv
+#6 Add new grammars needed to generate sentences (a)-(h)
+#Then I summarize grammars from those syntaxes listed above.
+################################################################################
 
-TODO:
-extract the grammer from syntax
+#All nonterminals
 
 12	ROOT	S .       
 3	ROOT	S !
 1	ROOT	is it true that S ?     
 
+1	S	NP VP
+
+1	VP	Verb_trans NP
+1	VP	Verb_intrans
+0.5	VP	Verb_trans Conj Verb_trans NP
+1	VP	Verb_with_complement that S
+1	VP	Verb_with_explanation NP that S
+1	VP	Verb_intrans PP
+
+3	NP	Det Noun
+0.2	NP	NP PP #eliminate super long sentences, which are not natural.
+0.6	NP	Propernoun
+0.4	NP	NP Conj NP
+1	NP	Pronoun
+0.2	NP	that NP VP
+1	NP	Det Adv Adj Noun
+
+1	PP	Prep NP
+
+3	Noun	Adj Noun  #Multiple adjectives are common in sentences.
+
+0.1	Adv	Adv Adv
+
+#All terminals
+
+1	Propernoun	Sally
+
+1	Verb_trans	ate
+1	Verb_trans	wanted
+1	Verb_trans	perplexed
+0.1	Verb_trans	kissed
+0.1	Verb_trans	pickled
 
 
+1	Verb_intrans	signed
+1	Verb_intrans	worked
 
-TODO:
-list all nonterminals needed.
+5	Det	the
+5	Det	a
+1	Det	every
 
-Sally
-ate
-a
-sandwich
-and
-the
-president
-wanted
-sighed
-thought
-that
-it
-perplexed
-very
-worked
-on
-every
-proposal
-desk
-pickle
-...
+1	Noun	president
+1	Noun	sandwich
+1	Noun	pickle
+1	Noun	chief of staff
+1	Noun	floor
+1	Noun	desk
+1	Noun	proposal
+
+1	Pronoun	it
+
+1	Conj	and
+
+1	Verb_with_complement	thought
+1	Verb_with_complement	understood
+
+1	Verb_with_explanation	perplexed
+
+1	Adv	very
+
+10	Adj	fine
+10	Adj	delicious
+1	Adj	perplexed
+5	Adj	pickled
+
+5	Prep	with
+5	Prep	on
+1	Prep	under
+5	Prep	in
