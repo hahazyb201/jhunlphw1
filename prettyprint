@@ -54,11 +54,13 @@ sub pp {    # prettyprints expressions from @tokens,
   #    1 and 2, rather than waiting till expression 2 actually arrives.
   # 
   #    To make this work, we must print "\n" AFTER each level-0
-  #    expression.  I used to treat level 0 in exactly the same way as
-  #    the other levels (print "\n" BEFORE each expression other than
-  #    the first, which required the main routine to print a final
-  #    "\n" before quitting).  But I've modified the code so that we
-  #    suppress "\n" before level-0 expressions and add it after them.
+
+  #    expression.  I used to treat level 0 cleanly in exactly the
+  #    same way as the other levels (print "\n" BEFORE each expression
+  #    other than the first; this required the main routine to print a
+  #    final "\n" before quitting).  But I've modified the code so
+  #    that we suppress "\n" before level-0 expressions and add it after them.
+
 
   my($indent) = @_;
   my $i=0;
