@@ -2,14 +2,14 @@ import random
 import argparse
 
 
-M = 400
+M = 450
 
 
 def get_random_branch(pos, sdict):            
-    sum = 0.0
+    suma = 0.0
     for poss in sdict[pos]:
-        sum += poss[1]
-    ran = random.random() * sum
+        suma += poss[1]
+    ran = random.random() * suma
     lab = 0.0
     for poss in sdict[pos]:
         if lab <= ran < lab + poss[1]:
@@ -49,8 +49,8 @@ def gen_tree(pos, sdict):                         #generate the tree as well as 
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", action="store_true")
-parser.add_argument("file")
-parser.add_argument("repeat")
+parser.add_argument("file",nargs='?', default="grammar.gr")
+parser.add_argument("repeat", nargs='?', type=int, default=1)
 
 args = parser.parse_args()
 fg = open(args.file, 'r')
@@ -69,10 +69,10 @@ for line in fg.readlines():                                                #buil
 fg.close()
 
 for num in range(num_sen):
-    M = 400
+    M = 450
     if args.t:
         tree = gen_tree("ROOT", dic)
-        print (tree)
+        print(tree)
     else:
         sen = gen_sen('ROOT', dic)
         print(sen)
